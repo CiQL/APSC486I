@@ -1,24 +1,34 @@
 #!/usr/bin/env python3
 # functional version
-import functools
-import random
+#import functools
 
-def Analyze(data):
-    return _sum(data), _count(data), _avg(data)
+def analyze(data):
+    return _sum(data), _avg(data), _mdn(data), _mode(data)
 
 def _sum(data):
-    return data[0] + _sum(data[1:])
-
-def _avg(data):
-    return _sum(data) / _count(data)
-
-def _count(data):
-    if not data:
+    if len(data) < 1:
         return 0
     else:
-        return _count(data[1:]) + 1
+        return data[0] + _sum(data[1:])
+
+def _avg(data):
+    return _sum(data) / len(data)
+
+def _mdn(data):
+    d = sorted(data)
+    mdn = len(d)//2
+    if len(d) % 2 == 1:
+        return (d[mdn] + d[mdn+1]) / 2
+    else:
+        return d[mdn]
+
+def _mode(data):
+    # https://stackoverflow.com/a/28129716
+    return max(set(data), key=data.count)
 
 if __name__ == "__main__":
-    data = [random.random() for _ in range(100000)]
-    result = Analyze(data)
+    import random, sys
+    sys.setrecursionlimit(100000)
+    data = [random.randint(0, 10) for _ in range(10000)]
+    result = analyze(data)
     print(result)
