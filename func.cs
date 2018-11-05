@@ -1,0 +1,3 @@
+static var Analyze {
+    return;
+}
