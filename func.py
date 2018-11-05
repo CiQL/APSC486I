@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 # functional version
-#import functools
+import functools
 
 def analyze(data):
     return _sum(data), _avg(data), _mdn(data), _mode(data)
 
+# @functools.lru_cache()
+# def __sum(data):
+#     if len(data) < 1:
+#         return 0
+#     else:
+#         return data[0] + _sum(data[1:])
+
 def _sum(data):
-    if len(data) < 1:
-        return 0
-    else:
-        return data[0] + _sum(data[1:])
+    return functools.reduce(lambda x, y: x + y, data)
 
 def _avg(data):
     return _sum(data) / len(data)
