@@ -11,7 +11,12 @@ function _avg (data) {
 }
 
 function _mdn (data) {
-    return 0
+    let sort = data.sort((a,b) => a-b)
+    let mdn = data.length / 2
+    if (mdn % 2 == 1) {
+	return sort[mdn]
+    }
+    return (sort[mdn] + sort[mdn+1]) / 2
 }
 
 function _mode (data) {
@@ -22,10 +27,9 @@ function count (arr, val) {
     return arr.filter(i => i === val).length
 }
 
-Array.prototype.flatten = (arr) => arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flatten(val)) : acc.concat(val), [])
-
 function main() {
     let data = Array.from({length: 10000}, () => Math.floor(Math.random() * 10))
     return Analyze(data)
 }
+
 console.log(main())
