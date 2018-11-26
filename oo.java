@@ -11,7 +11,7 @@ class oo {
 	return s;
     }
     public int avg() {
-	return this.sum() / this.data.length();
+	return this.sum() / this.data.length;
     }
     public String toString() {
         return this.data;
