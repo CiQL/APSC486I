@@ -1,16 +1,12 @@
 import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 class func {
-    public static List<Object> analyze(int[] data) {
-        return new List<Object>() {
-	    sum(data), avg(data), median(data), mode(data)
-	};
+    public static void analyze() {
+        return;
     }
     public static int sum(int[] data) {
 	return reduce((x, y)-> x + y);
     }
-    public static double avg(int[] data) {
+    public static int avg(int[] data) {
 	return sum(data) / data.length;
     }
     public static int median(int[] data) {
@@ -23,11 +19,9 @@ class func {
 	return (array[mdn] + array[mdn+1]) / 2;
     }
     public static int mode(int[] data) {
-	
+
     }
     public static void main() {
-	Random r = new Random();
-	int[] dataset = r.ints(0,10).limit(10000).toArray();
-	System.out.println(analyze(dataset));
+	
     }
 }
