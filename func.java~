@@ -2,7 +2,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.HashMap;
 class func {
     public static List<Object> analyze(int[] data) {
         return new ArrayList<Object>(
@@ -25,10 +24,7 @@ class func {
 	return (array[mdn] + array[mdn+1]) / 2;
     }
     public static int mode(int[] data) {
-	return Arrays.stream(data).reduce((a, b) => (count(data, a) > count(data, b)) ? a : b);
-    }
-    public static int count(int[] data, int value) {
-	return Arrays.stream(data).filter(i => i == val).length;
+return 0;
     }
     public static void main(String[] args) {
 	Random r = new Random();
