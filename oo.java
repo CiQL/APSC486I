@@ -34,7 +34,7 @@ class oo {
     public int mode() {
 		return 0;
     }
-    public static void main() {
+    public static void main(String[] args) {
 	Random r = new Random();
 	int[] dataset = r.ints(0,10).limit(10000).toArray();
 	oo dataAnalysis = new oo(dataset);

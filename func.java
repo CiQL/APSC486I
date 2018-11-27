@@ -9,7 +9,7 @@ class func {
 		);
     }
     public static int sum(int[] data) {
-		return Arrays.toList(data).reduce((x, y)-> x + y);
+		return Arrays.stream(data).reduce(0, (x, y)-> x + y);
     }
     public static double avg(int[] data) {
 	return sum(data) / data.length;
@@ -26,7 +26,7 @@ class func {
     public static int mode(int[] data) {
 return 0;
     }
-    public static void main() {
+    public static void main(String[] args) {
 	Random r = new Random();
 	int[] dataset = r.ints(0,10).limit(10000).toArray();
 	System.out.println(analyze(dataset));
