@@ -1,14 +1,15 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 class func {
     public static List<Object> analyze(int[] data) {
-        return new List<Object>() {
+        return new List<Object>(
 	    sum(data), avg(data), median(data), mode(data)
-	};
+		);
     }
     public static int sum(int[] data) {
-	return reduce((x, y)-> x + y);
+		return Arrays.toList(data).reduce((x, y)-> x + y);
     }
     public static double avg(int[] data) {
 	return sum(data) / data.length;
@@ -23,7 +24,7 @@ class func {
 	return (array[mdn] + array[mdn+1]) / 2;
     }
     public static int mode(int[] data) {
-	
+return 0;
     }
     public static void main() {
 	Random r = new Random();
