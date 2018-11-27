@@ -4,3 +4,6 @@
 static auto analyze() {
     return;
 }
+int main(int, char *[]) {
+
+}
