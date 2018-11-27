@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 class func {
     public static List<Object> analyze(int[] data) {
-        return new List<Object>(
-	    sum(data), avg(data), median(data), mode(data)
+        return new ArrayList<Object>(
+	    Arrays.asList(sum(data), avg(data), median(data), mode(data))
 		);
     }
     public static int sum(int[] data) {
