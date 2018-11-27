@@ -2,7 +2,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.HashMap;
 class func {
     public static List<Object> analyze(int[] data) {
         return new ArrayList<Object>(
