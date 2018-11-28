@@ -5,7 +5,7 @@ class DataAnalysis {
     DataAnalysis(string data) {
         this.data = data;
     }
-    int main(int, char *[]) {
-    
-    }
+}  
+int main(int, char *[]) {
+
 }

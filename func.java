@@ -6,10 +6,10 @@ class func {
     public static List<Object> analyze(int[] data) {
         return new ArrayList<Object>(
 	    Arrays.asList(sum(data), avg(data), median(data), mode(data))
-		);
+	);
     }
     public static int sum(int[] data) {
-		return Arrays.stream(data).reduce(0, (x, y)-> x + y);
+	return Arrays.stream(data).reduce(0, (x, y)-> x + y);
     }
     public static double avg(int[] data) {
 	return sum(data) / data.length;

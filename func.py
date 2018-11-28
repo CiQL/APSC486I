@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# functional version
 import functools
 
 def analyze(data):
