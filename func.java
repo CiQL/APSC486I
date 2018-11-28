@@ -24,10 +24,11 @@ class func {
 	return (array[mdn] + array[mdn+1]) / 2;
     }
     public static int mode(int[] data) {
-	return Arrays.stream(data).reduce((a, b) => (count(data, a) > count(data, b)) ? a : b);
+	dataStream = Arrays.stream(data);
+	return dataStream.reduce(0, (a, b) -> (count(data, a) > count(data, b)) ? a : b);
     }
     public static int count(int[] data, int value) {
-	return Arrays.stream(data).filter(i => i == val).length;
+	return Arrays.stream(data).filter(i -> i == value).toArray().length;
     }
     public static void main(String[] args) {
 	Random r = new Random();
