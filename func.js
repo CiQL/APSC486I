@@ -20,11 +20,11 @@ function _mdn(data) {
 }
 
 function _mode(data) {
-	return data.sort((x, y) => count(data, x) > count(data, y))[0]
+	return data.reduce((x,y) => (count(data, x) > count(data, y)) ? x : y)
 }
 
-function count(arr, val) {
-	return arr.filter(i => i === val).length
+function count(arr, x) {
+	return arr.filter(i => i === x).length
 }
 
 function main() {

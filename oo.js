@@ -16,11 +16,12 @@ class DataAnalysis {
 		return this.sum() / this.data.length
 	}
 	median() {
+		let sorted = this.data.sort((x, y) => x - y);
 		let mdn = this.data.length / 2
 		if (mdn % 2 == 1) {
-			return this.data[mdn]
+			return sorted[mdn]
 		}
-		return (this.data[mdn] + this.data[mdn + 1]) / 2
+		return (sorted[mdn] + sorted[mdn + 1]) / 2
 	}
 	mode() {
 		let counts = {}
@@ -33,8 +34,19 @@ class DataAnalysis {
 			}
 		}
 		let arr = Object.values(counts)
-		return Math.max(...arr)
+		let key = Object.keys(counts)
+		let max = Math.max(...arr)
+		for (let i of key) {
+			if (counts[i] === max) {
+				return i
+			}
+		}
 	}
 }
 
-console.log(DataAnalysis(data).analyze())
+function main() {
+	let data = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 10))
+	return new DataAnalysis(data).analyze()
+}
+
+console.log(main())
