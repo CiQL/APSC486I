@@ -29,8 +29,6 @@ def _mode(data):
 
 if __name__ == "__main__":
 	import random
-	import sys
-	sys.setrecursionlimit(100000)
 	data = [random.randint(0, 10) for _ in range(10000)]
 	result = analyze(data)
 	print(result)

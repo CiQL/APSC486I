@@ -25,13 +25,16 @@ class DataAnalysis:
 
 	def mode(self):
 		d = {}
+		_max = 0
 		for i in self.data:
 			if i in d:
 				d[i] += 1
 			else:
 				d[i] = 1
-		return max(d)
-
+		for k, v in d.items():
+			if v > d[_max]:
+				_max = k
+		return _max
 
 if __name__ == "__main__":
 	import random
